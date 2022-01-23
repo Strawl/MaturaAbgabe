@@ -24,22 +24,22 @@ namespace SPG_Fachtheorie.Aufgabe3Mvc.Controllers
 
         private Guid? IsCoach()
         {
-            var coach = _appointmentContext.Students.FirstOrDefault(person => person.Username == _authService.Username);
+            var coach = _appointmentContext.Students.ToList().Find(person => person.Username == _authService.Username);
             if (coach != null && coach is Coach){
                 return coach.Id;
             }
             return null;
         }
 
-        // Offers/Index
-        [Authorize]
+        // /Offers/Index
+        [Authorize()]
         public IActionResult Index()
         {
             Guid? coachId = IsCoach();
             var context = _appointmentContext.Offers
                 .Where(offer => offer.TeacherId == coachId)
                 .Include(x => x.Subject)
-                .Include(x => x.Appointments);
+                .Include(x => x.Teacher);
             return View(context);
         }
     }
