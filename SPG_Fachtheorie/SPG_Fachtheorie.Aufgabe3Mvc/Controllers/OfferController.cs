@@ -1,83 +1,46 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SPG_Fachtheorie.Aufgabe2;
+using SPG_Fachtheorie.Aufgabe2.Model;
+using SPG_Fachtheorie.Aufgabe3Mvc.Services;
+using System;
+using System.Linq;
 
 namespace SPG_Fachtheorie.Aufgabe3Mvc.Controllers
 {
+
     public class OfferController : Controller
     {
-        // GET: OfferController
-        public ActionResult Index()
+        private readonly AuthService _authService;
+        private readonly AppointmentContext _appointmentContext;
+
+        public OfferController(AuthService authService, AppointmentContext appointmentContext)
         {
-            return View();
+            _authService = authService;
+            _appointmentContext = appointmentContext;
         }
 
-        // GET: OfferController/Details/5
-        public ActionResult Details(int id)
+        private Guid? IsCoach()
         {
-            return View();
-        }
-
-        // GET: OfferController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: OfferController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
+            var coach = _appointmentContext.Students.FirstOrDefault(person => person.Username == _authService.Username);
+            if (coach != null && coach is Coach){
+                return coach.Id;
             }
-            catch
-            {
-                return View();
-            }
+            return null;
         }
 
-        // GET: OfferController/Edit/5
-        public ActionResult Edit(int id)
+        // Offers/Index
+        [Authorize]
+        public IActionResult Index()
         {
-            return View();
-        }
-
-        // POST: OfferController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: OfferController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: OfferController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Guid? coachId = IsCoach();
+            var context = _appointmentContext.Offers
+                .Where(offer => offer.TeacherId == coachId)
+                .Include(x => x.Subject)
+                .Include(x => x.Appointments);
+            return View(context);
         }
     }
 }
