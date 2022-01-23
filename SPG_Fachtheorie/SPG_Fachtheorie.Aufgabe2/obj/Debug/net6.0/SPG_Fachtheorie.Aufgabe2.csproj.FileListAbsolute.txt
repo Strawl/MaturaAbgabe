@@ -1,0 +1,12 @@
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\bin\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.deps.json
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\bin\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.dll
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\bin\Debug\net6.0\ref\SPG_Fachtheorie.Aufgabe2.dll
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\bin\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.pdb
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.csproj.AssemblyReference.cache
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.AssemblyInfoInputs.cache
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.AssemblyInfo.cs
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.csproj.CoreCompileInputs.cache
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.dll
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\ref\SPG_Fachtheorie.Aufgabe2.dll
+C:\Personal\School\2021-2022\POS_C#\Gyarmati\SPG_Fachtheorie\SPG_Fachtheorie.Aufgabe2\obj\Debug\net6.0\SPG_Fachtheorie.Aufgabe2.pdb
