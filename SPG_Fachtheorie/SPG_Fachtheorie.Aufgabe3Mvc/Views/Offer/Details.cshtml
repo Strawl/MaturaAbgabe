@@ -1,0 +1,56 @@
+﻿@using SPG_Fachtheorie.Aufgabe2.Model
+@model IEnumerable<SPG_Fachtheorie.Aufgabe2.Model.Appointment>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        string color = "";
+        @if (item.State == AppointmentState.Cancelled){
+            color = "background: gray";
+        }
+        <tr style="@color">
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@Html.ActionLink("Offer", "Index", new { /* id=item.PrimaryKey */ })
